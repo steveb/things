@@ -1,23 +1,24 @@
 
+spacing=33/10;
+start_offset = -8.9;
+hole_count=6;
+end_offset=start_offset + spacing * hole_count;
+
 render(convexity = 4) {
   difference() {
     union() {
-      cylinder(h = 15, r=30, $fn=100);
-      for (f = [-9 : 3 : 9]) {
-        translate([25,f,0])
-          cube([20, 1.6, 15]);
-      }
+      cylinder(h = 15, d=30, $fn=100);
+      //for (f = [-9.5 : spacing : 8.5]) {
+      //  translate([10,f,0])
+      //    cube([15, 1.6, 15]);
+      //}
     }
     union () {
-      for (f = [-8.7 : 3 : 9.3]) {
-        translate([20,f,5])
-          cube([30, 1, 5]);
+      for (f = [start_offset : spacing : end_offset]) {
+        translate([0,f,3])
+          cube([30, 1, 9]);
       }
-      intersection() {
-        cylinder(h = 11, r=25, $fn=100);
-        translate([-10, -9, 0])
-          cube([40, 20, 11]);
-      }
+      cylinder(h = 12, d=20, $fn=100);
     }
   }
 }
