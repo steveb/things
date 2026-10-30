@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../dev/notwork/FlashForge-CreatorPro2-PS-Profile"
+		},
+		{
+			"path": "../../../dev/notwork/FFCP-GCodeSnippets"
+		}
+	],
+	"settings": {}
+}
